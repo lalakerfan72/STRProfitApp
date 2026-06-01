@@ -38,7 +38,8 @@ Open [http://localhost:3000](http://localhost:3000).
 1. Copy `.env.example` to `.env.local`.
 2. Create two **300×250** display ad units in [Google AdSense](https://www.google.com/adsense/) for the right sidebar (top and bottom).
 3. Set `NEXT_PUBLIC_ADS_ENABLED=true`, `NEXT_PUBLIC_ADSENSE_CLIENT`, `NEXT_PUBLIC_AD_SLOT_SIDEBAR`, and `NEXT_PUBLIC_AD_SLOT_SIDEBAR_2`.
-4. Deploy only after AdSense approves your domain.
+4. Verify `https://your-domain.com/ads.txt` returns the Google publisher line (same `ca-pub-…` ID as above; check in AdSense site settings).
+5. Deploy only after AdSense approves your domain.
 
 A labeled placeholder displays when ads are disabled (default in development).
 

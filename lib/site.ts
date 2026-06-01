@@ -18,3 +18,12 @@ export const adSlotSidebar2 =
 
 export const adsEnabled = process.env.NEXT_PUBLIC_ADS_ENABLED === "true";
 export const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? "";
+
+const ADSENSE_CLIENT_PATTERN = /^ca-pub-\d{16}$/;
+const GOOGLE_ADS_TXT_CERT_ID = "f08c47fec0942fa0";
+
+export function getAdsTxtBody(): string | null {
+  if (!ADSENSE_CLIENT_PATTERN.test(adsenseClient)) return null;
+  const pubId = adsenseClient.replace(/^ca-/, "");
+  return `google.com, ${pubId}, DIRECT, ${GOOGLE_ADS_TXT_CERT_ID}`;
+}
