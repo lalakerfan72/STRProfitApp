@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { AdScript } from "@/components/AdScript";
-import { JsonLd } from "@/components/JsonLd";
 import {
   defaultDescription,
   defaultKeywords,
@@ -18,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} | Airbnb & STR Profit Estimator`,
+    default: `${siteName} | Passive Income Ideas & Tools`,
     template: `%s | ${siteName}`,
   },
   description: defaultDescription,
@@ -31,20 +30,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName,
-    title: `${siteName} | Short-Term Rental Profit Calculator`,
+    title: `${siteName} | Passive Income Ideas & Tools`,
     description: defaultDescription,
     images: [
       {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Short-term rental profitability calculator",
+        alt: siteName,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | STR Profit Calculator`,
+    title: `${siteName} | Passive Income Ideas & Tools`,
     description: defaultDescription,
     images: ["/og-image.svg"],
   },
@@ -62,7 +61,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <JsonLd />
         <AdScript />
         {children}
       </body>

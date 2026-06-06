@@ -1,12 +1,11 @@
 import type { MetadataRoute } from "next";
-import { siteName } from "@/lib/site";
+import { siteName, defaultDescription } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteName,
-    short_name: "STR Calc",
-    description:
-      "Short-term rental profitability calculator for Airbnb and vacation rentals.",
+    short_name: "Income Hub",
+    description: defaultDescription,
     start_url: "/",
     display: "standalone",
     background_color: "#f8fafc",
